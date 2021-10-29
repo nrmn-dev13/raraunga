@@ -1,0 +1,10 @@
+.btn {
+  &--white {
+    background: $white;
+    border: 1px solid $lite-gray;
+    border-radius: 4px;
+  }
+  &:focus {
+    box-shadow: none;
+  }
+}
