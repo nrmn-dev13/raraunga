@@ -57,12 +57,26 @@ ul {
     display: flex;
     flex: 1 1 auto;
   }
+  &--input {
+    margin-right: 15px;
+    display: flex;
+    flex: 1 1 auto;
+    .icon--search {
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      right: 14px;
+      transform: translateY(-50%);
+      color: $secondary-gray;
+    }
+  }
 }
 .section {
   height: 100%;
   position: relative;
   z-index: 0;
-	overflow: auto;
+  overflow: auto;
+  background-color: $white;
   &--alert {
     height: auto;
     overflow: hidden;
@@ -76,11 +90,15 @@ ul {
   width: 100%;
 }
 .form {
+  padding: 15px;
+  &:last-child {
+    padding-top: 10px;
+  }
   &--float {
     position: absolute;
-    top: 15px;
-    left: 15px;
-    right: 15px;
+    top: 0;
+    left: 0;
+    right: 0;
     z-index: 1;
   }
   .form-group {
@@ -89,8 +107,9 @@ ul {
     .wrapper {
       .dropdown {
         .btn--white {
-          .fa-map-marked-alt {
+          .icon--view {
             margin-right: 9.5px;
+            color: $black;
           }
           .fa-chevron-down {
             color: $secondary-gray;
@@ -114,38 +133,75 @@ ul {
       box-shadow: none;
     }
   }
+  .form-control {
+    border: 1px solid $lite-gray;
+    box-sizing: border-box;
+    border-radius: 4px;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 140.62%;
+    color: $secondary-black;
+    padding-right: 42px;
+    &:focus {
+      border: 2px solid $lite-gray;
+      box-shadow: none;
+    }
+  }
 }
 .card {
   background: $white;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 4px;
   padding: 10px;
-	z-index: 1;
+  z-index: 1;
+  &--list {
+    padding: 5px;
+    box-shadow: none;
+    margin-bottom: 15px;
+    .title {
+      line-height: 125%;
+    }
+    .eligible-wrapper {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 11px;
+      .text {
+        font-size: 10px;
+        line-height: 125%;
+        color: $gray;
+        &--number {
+          font-weight: 900;
+          color: $primary-green;
+        }
+      }
+    }
+  }
   &--bottom {
     position: absolute;
     bottom: 10px;
     left: 10px;
     right: 10px;
-		&.active {
-			.card-header {
-				.action--toggle {
-					.icon--toggle {
-						transform: rotate(180deg);						
-					}
-					.text {						
-						&--show {
-							display: block;
-						}
-						&--hide {
-							display: none;
-						}
-					}
-				}
-			}
-			.card-body {
-				display: none;
-			}
-		}
+    &.active {
+      .card-header {
+        .action--toggle {
+          .icon--toggle {
+            transform: rotate(180deg);
+          }
+          .text {
+            &--show {
+              display: block;
+            }
+            &--hide {
+              display: none;
+            }
+          }
+        }
+      }
+      .card-body {
+        display: none;
+      }
+    }
   }
   .card-header {
     padding: 0;
@@ -166,19 +222,19 @@ ul {
       }
       .text {
         color: $gray;
-				&--show {
-					display: none;
-				}
-				&--hide {
-					display: block;
-				}
+        &--show {
+          display: none;
+        }
+        &--hide {
+          display: block;
+        }
       }
     }
   }
   .card-body {
     padding: 0;
-		display: block;
-		height: 100%;
+    display: block;
+    height: 100%;
   }
 }
 .box {
@@ -205,6 +261,90 @@ ul {
     &:last-child {
       margin: 0;
     }
+    &--progress {
+      position: relative;
+      border-radius: 100px;
+      margin-bottom: 10px;
+      &.unvaccinated {
+        background-color: $tertiary-blue;
+        .text {
+          color: $text-blue;
+        }
+        .progress-bar {
+          &::-webkit-progress-value {
+            background-color: $secondary-blue;
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+          }
+          &::-webkit-progress-bar {
+            background-color: $primary-blue;
+          }
+        }
+      }
+      &.first-dose {
+        background-color: $tertiary-yellow;
+        .text {
+          color: $text-yellow;
+        }
+        .progress-bar {
+          &::-webkit-progress-value {
+            background-color: $primary-yellow;
+          }
+          &::-webkit-progress-bar {
+            background-color: $tertiary-yellow;
+          }
+        }
+      }
+      &.second-dose {
+        background-color: $secondary-green;
+        .text {
+          color: $text-green;
+        }
+        .progress-bar {
+          &::-webkit-progress-value {
+            background-color: $primary-green;
+          }
+          &::-webkit-progress-bar {
+            background-color: $secondary-green;
+          }
+        }
+      }
+      .progress-wrapper {
+        position: relative;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 5px 6px;
+        margin: 5px 6px;
+        border-radius: 100px;
+        .title {
+          font-weight: 500;
+          font-size: 10px;
+          line-height: 125%;
+          z-index: 1;
+        }
+        .text {
+          font-weight: 500;
+          font-size: 10px;
+          line-height: 125%;
+          z-index: 1;
+        }        
+      }
+      .progress-bar {
+        z-index: 0;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 100px;
+        &::-webkit-progress-value {
+          border-radius: 100px;
+        }
+      }
+    }
     .wrapper--item {
       display: flex;
       align-items: center;
@@ -229,7 +369,7 @@ ul {
       display: flex;
       align-items: center;
       justify-content: center;
-			flex: 0 0 auto;
+      flex: 0 0 auto;
       background-color: $white;
       border: 1px solid $black;
       box-sizing: border-box;

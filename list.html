@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <!-- General meta tags needed-->
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <!-- Needed for responsive design -->
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <!-- If you want custom browser colors on mobile -->
+    <meta name="theme-color" content="#1843c1" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="#1843c1" />
+
+    <title></title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- CSS File -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
+      integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+
+    <link rel="stylesheet" href="dist/style.css?cb=1635512584533" />
+
+    <!-- JavaScript File -->
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+    <script defer src="dist/all.js?cb=1635512584533"></script>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar navbar-light p-0">
+        <div class="container justify-content-center">
+          <a class="navbar-brand" href="./index.html">
+            <img src="./dist/img/logo.png" alt="" />
+          </a>
+        </div>        
+      </nav>
+    </header>
+    <main>
+      <section class="section section--alert">
+        <div class="sub-nav bg-yellow">
+          <h4 class="title">Covid-19 vaccination coordination by suburb</h4>
+        </div>
+      </section>
+      <section class="section section--list">
+        <form class="form">
+          <div class="form-group">
+            <div class="wrapper wrapper--select">
+              <select class="form-select" aria-label="Default select example">
+                <option selected>Select Location</option>
+                <option value="1">Auckland</option>
+              </select>
+            </div>
+            <div class="wrapper">
+              <div class="dropdown">
+                <button
+                  class="btn btn--white"
+                  type="button"
+                  id="dropdownMenuButton1"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  <i class="icon icon--view fas fa-list"></i>
+                  <i class="fas fa-chevron-down"></i>
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                  <li><a class="dropdown-item" href="./map.html">View by map</a></li>
+                  <li><a class="dropdown-item" href="./list.html">View by list</a></li>                  
+                </ul>
+              </div>
+            </div>
+          </div>
+        </form>
+        <form class="form">
+          <div class="form-group">
+            <div class="wrapper wrapper--input">
+              <input type="text" class="form-control" id="exampleInputtext1" aria-describedby="text" placeholder="Eg. Auckland Airport">
+              <i class="icon icon--search fas fa-search"></i>
+            </div>
+            <div class="wrapper">
+              <div class="dropdown">
+                <button
+                  class="btn btn--white"
+                  type="button"
+                  id="dropdownMenuButton2"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                <i class="icon icon--sort fas fa-sort-amount-down"></i>                  
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
+                  <li><a class="dropdown-item" href="#">All Dose</a></li>
+                  <li><a class="dropdown-item" href="#">Least 1st dose</a></li>
+                  <li><a class="dropdown-item" href="#">Least 2nd dose</a></li>
+                  <li><a class="dropdown-item" href="#">Most 1st dose</a></li>
+                  <li><a class="dropdown-item" href="#">Most 2nd dose</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </form>
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-6 col-md-4 col-lg-4">
+              <div class="card card--list">
+                <h4 class="title">Eden Terrace</h4>
+                <div class="eligible-wrapper">
+                  <div class="text">Eligible Population </div>
+                  <div class="text text--number">254</div>
+                </div>
+                <ul class="list">
+                  <li class="list__item list__item--progress unvaccinated">
+                    <div class="progress-wrapper">
+                      <h6 class="title">Unvaccinated</h6>
+                      <p class="text">48</p>
+                      <progress class="progress-bar" id="file" value="32" max="100"> 32% </progress>
+                    </div>
+                  </li>
+                  <li class="list__item list__item--progress first-dose">
+                    <div class="progress-wrapper">
+                      <h6 class="title">Unvaccinated</h6>
+                      <p class="text">48</p>
+                      <progress class="progress-bar" id="file" value="32" max="100"> 32% </progress>
+                    </div>
+                  </li>
+                  <li class="list__item list__item--progress second-dose">
+                    <div class="progress-wrapper">
+                      <h6 class="title">Unvaccinated</h6>
+                      <p class="text">48</p>
+                      <progress class="progress-bar" id="file" value="32" max="100"> 32% </progress>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>            
+            <div class="col-6 col-md-4 col-lg-4">
+              <div class="card card--list">
+                <h4 class="title">Eden Terrace</h4>
+                <div class="eligible-wrapper">
+                  <div class="text">Eligible Population </div>
+                  <div class="text text--number">254</div>
+                </div>
+                <ul class="list">
+                  <li class="list__item list__item--progress unvaccinated">
+                    <div class="progress-wrapper">
+                      <h6 class="title">Unvaccinated</h6>
+                      <p class="text">48</p>
+                      <progress class="progress-bar" id="file" value="32" max="100"> 32% </progress>
+                    </div>
+                  </li>
+                  <li class="list__item list__item--progress first-dose">
+                    <div class="progress-wrapper">
+                      <h6 class="title">Unvaccinated</h6>
+                      <p class="text">48</p>
+                      <progress class="progress-bar" id="file" value="32" max="100"> 32% </progress>
+                    </div>
+                  </li>
+                  <li class="list__item list__item--progress second-dose">
+                    <div class="progress-wrapper">
+                      <h6 class="title">Unvaccinated</h6>
+                      <p class="text">48</p>
+                      <progress class="progress-bar" id="file" value="32" max="100"> 32% </progress>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>            
+            <div class="col-6 col-md-4 col-lg-4">
+              <div class="card card--list">
+                <h4 class="title">Eden Terrace</h4>
+                <div class="eligible-wrapper">
+                  <div class="text">Eligible Population </div>
+                  <div class="text text--number">254</div>
+                </div>
+                <ul class="list">
+                  <li class="list__item list__item--progress unvaccinated">
+                    <div class="progress-wrapper">
+                      <h6 class="title">Unvaccinated</h6>
+                      <p class="text">48</p>
+                      <progress class="progress-bar" id="file" value="32" max="100"> 32% </progress>
+                    </div>
+                  </li>
+                  <li class="list__item list__item--progress first-dose">
+                    <div class="progress-wrapper">
+                      <h6 class="title">Unvaccinated</h6>
+                      <p class="text">48</p>
+                      <progress class="progress-bar" id="file" value="32" max="100"> 32% </progress>
+                    </div>
+                  </li>
+                  <li class="list__item list__item--progress second-dose">
+                    <div class="progress-wrapper">
+                      <h6 class="title">Unvaccinated</h6>
+                      <p class="text">48</p>
+                      <progress class="progress-bar" id="file" value="32" max="100"> 32% </progress>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>            
+            <div class="col-6 col-md-4 col-lg-4">
+              <div class="card card--list">
+                <h4 class="title">Eden Terrace</h4>
+                <div class="eligible-wrapper">
+                  <div class="text">Eligible Population </div>
+                  <div class="text text--number">254</div>
+                </div>
+                <ul class="list">
+                  <li class="list__item list__item--progress unvaccinated">
+                    <div class="progress-wrapper">
+                      <h6 class="title">Unvaccinated</h6>
+                      <p class="text">48</p>
+                      <progress class="progress-bar" id="file" value="32" max="100"> 32% </progress>
+                    </div>
+                  </li>
+                  <li class="list__item list__item--progress first-dose">
+                    <div class="progress-wrapper">
+                      <h6 class="title">Unvaccinated</h6>
+                      <p class="text">48</p>
+                      <progress class="progress-bar" id="file" value="32" max="100"> 32% </progress>
+                    </div>
+                  </li>
+                  <li class="list__item list__item--progress second-dose">
+                    <div class="progress-wrapper">
+                      <h6 class="title">Unvaccinated</h6>
+                      <p class="text">48</p>
+                      <progress class="progress-bar" id="file" value="32" max="100"> 32% </progress>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>            
+            <div class="col-6 col-md-4 col-lg-4">
+              <div class="card card--list">
+                <h4 class="title">Eden Terrace</h4>
+                <div class="eligible-wrapper">
+                  <div class="text">Eligible Population </div>
+                  <div class="text text--number">254</div>
+                </div>
+                <ul class="list">
+                  <li class="list__item list__item--progress unvaccinated">
+                    <div class="progress-wrapper">
+                      <h6 class="title">Unvaccinated</h6>
+                      <p class="text">48</p>
+                      <progress class="progress-bar" id="file" value="32" max="100"> 32% </progress>
+                    </div>
+                  </li>
+                  <li class="list__item list__item--progress first-dose">
+                    <div class="progress-wrapper">
+                      <h6 class="title">Unvaccinated</h6>
+                      <p class="text">48</p>
+                      <progress class="progress-bar" id="file" value="32" max="100"> 32% </progress>
+                    </div>
+                  </li>
+                  <li class="list__item list__item--progress second-dose">
+                    <div class="progress-wrapper">
+                      <h6 class="title">Unvaccinated</h6>
+                      <p class="text">48</p>
+                      <progress class="progress-bar" id="file" value="32" max="100"> 32% </progress>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>            
+            <div class="col-6 col-md-4 col-lg-4">
+              <div class="card card--list">
+                <h4 class="title">Eden Terrace</h4>
+                <div class="eligible-wrapper">
+                  <div class="text">Eligible Population </div>
+                  <div class="text text--number">254</div>
+                </div>
+                <ul class="list">
+                  <li class="list__item list__item--progress unvaccinated">
+                    <div class="progress-wrapper">
+                      <h6 class="title">Unvaccinated</h6>
+                      <p class="text">48</p>
+                      <progress class="progress-bar" id="file" value="32" max="100"> 32% </progress>
+                    </div>
+                  </li>
+                  <li class="list__item list__item--progress first-dose">
+                    <div class="progress-wrapper">
+                      <h6 class="title">Unvaccinated</h6>
+                      <p class="text">48</p>
+                      <progress class="progress-bar" id="file" value="32" max="100"> 32% </progress>
+                    </div>
+                  </li>
+                  <li class="list__item list__item--progress second-dose">
+                    <div class="progress-wrapper">
+                      <h6 class="title">Unvaccinated</h6>
+                      <p class="text">48</p>
+                      <progress class="progress-bar" id="file" value="32" max="100"> 32% </progress>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>            
+            <div class="col-6 col-md-4 col-lg-4">
+              <div class="card card--list">
+                <h4 class="title">Eden Terrace</h4>
+                <div class="eligible-wrapper">
+                  <div class="text">Eligible Population </div>
+                  <div class="text text--number">254</div>
+                </div>
+                <ul class="list">
+                  <li class="list__item list__item--progress unvaccinated">
+                    <div class="progress-wrapper">
+                      <h6 class="title">Unvaccinated</h6>
+                      <p class="text">48</p>
+                      <progress class="progress-bar" id="file" value="32" max="100"> 32% </progress>
+                    </div>
+                  </li>
+                  <li class="list__item list__item--progress first-dose">
+                    <div class="progress-wrapper">
+                      <h6 class="title">Unvaccinated</h6>
+                      <p class="text">48</p>
+                      <progress class="progress-bar" id="file" value="32" max="100"> 32% </progress>
+                    </div>
+                  </li>
+                  <li class="list__item list__item--progress second-dose">
+                    <div class="progress-wrapper">
+                      <h6 class="title">Unvaccinated</h6>
+                      <p class="text">48</p>
+                      <progress class="progress-bar" id="file" value="32" max="100"> 32% </progress>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>            
+            <div class="col-6 col-md-4 col-lg-4">
+              <div class="card card--list">
+                <h4 class="title">Eden Terrace</h4>
+                <div class="eligible-wrapper">
+                  <div class="text">Eligible Population </div>
+                  <div class="text text--number">254</div>
+                </div>
+                <ul class="list">
+                  <li class="list__item list__item--progress unvaccinated">
+                    <div class="progress-wrapper">
+                      <h6 class="title">Unvaccinated</h6>
+                      <p class="text">48</p>
+                      <progress class="progress-bar" id="file" value="32" max="100"> 32% </progress>
+                    </div>
+                  </li>
+                  <li class="list__item list__item--progress first-dose">
+                    <div class="progress-wrapper">
+                      <h6 class="title">Unvaccinated</h6>
+                      <p class="text">48</p>
+                      <progress class="progress-bar" id="file" value="32" max="100"> 32% </progress>
+                    </div>
+                  </li>
+                  <li class="list__item list__item--progress second-dose">
+                    <div class="progress-wrapper">
+                      <h6 class="title">Unvaccinated</h6>
+                      <p class="text">48</p>
+                      <progress class="progress-bar" id="file" value="32" max="100"> 32% </progress>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>            
+            <div class="col-6 col-md-4 col-lg-4">
+              <div class="card card--list">
+                <h4 class="title">Eden Terrace</h4>
+                <div class="eligible-wrapper">
+                  <div class="text">Eligible Population </div>
+                  <div class="text text--number">254</div>
+                </div>
+                <ul class="list">
+                  <li class="list__item list__item--progress unvaccinated">
+                    <div class="progress-wrapper">
+                      <h6 class="title">Unvaccinated</h6>
+                      <p class="text">48</p>
+                      <progress class="progress-bar" id="file" value="32" max="100"> 32% </progress>
+                    </div>
+                  </li>
+                  <li class="list__item list__item--progress first-dose">
+                    <div class="progress-wrapper">
+                      <h6 class="title">Unvaccinated</h6>
+                      <p class="text">48</p>
+                      <progress class="progress-bar" id="file" value="32" max="100"> 32% </progress>
+                    </div>
+                  </li>
+                  <li class="list__item list__item--progress second-dose">
+                    <div class="progress-wrapper">
+                      <h6 class="title">Unvaccinated</h6>
+                      <p class="text">48</p>
+                      <progress class="progress-bar" id="file" value="32" max="100"> 32% </progress>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>            
+            <div class="col-6 col-md-4 col-lg-4">
+              <div class="card card--list">
+                <h4 class="title">Eden Terrace</h4>
+                <div class="eligible-wrapper">
+                  <div class="text">Eligible Population </div>
+                  <div class="text text--number">254</div>
+                </div>
+                <ul class="list">
+                  <li class="list__item list__item--progress unvaccinated">
+                    <div class="progress-wrapper">
+                      <h6 class="title">Unvaccinated</h6>
+                      <p class="text">48</p>
+                      <progress class="progress-bar" id="file" value="32" max="100"> 32% </progress>
+                    </div>
+                  </li>
+                  <li class="list__item list__item--progress first-dose">
+                    <div class="progress-wrapper">
+                      <h6 class="title">Unvaccinated</h6>
+                      <p class="text">48</p>
+                      <progress class="progress-bar" id="file" value="32" max="100"> 32% </progress>
+                    </div>
+                  </li>
+                  <li class="list__item list__item--progress second-dose">
+                    <div class="progress-wrapper">
+                      <h6 class="title">Unvaccinated</h6>
+                      <p class="text">48</p>
+                      <progress class="progress-bar" id="file" value="32" max="100"> 32% </progress>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>            
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
