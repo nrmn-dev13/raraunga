@@ -1,16 +1,31 @@
-// Media Queries
-$mq-620-down: "only screen and (max-width: 620px)";
-$mq-620-up: "only screen and (min-width: 620px)";
-
-$mq-760-down: "only screen and (max-width: 759px)";
-$mq-760-up: "only screen and (min-width: 760px)";
-
-$mq-900-down: "only screen and (max-width: 899px)";
-$mq-900-up: "only screen and (min-width: 900px)";
-
-$mq-1000-down: "only screen and (max-width: 999px)";
-$mq-1000-up: "only screen and (min-width: 1000px)";
-
-$mq-1180-up: "only screen and (min-width: 1180px)";
-
-$mq-1400-up: "only screen and (min-width: 1400px)";
+@mixin for-size($size) {
+	@if $size == phone-xs {
+		@media (min-width: 320px) and (max-width: 375px) {
+			@content;
+		}
+	} @else if $size == phone-sm {
+		@media (min-width: 376px) and (max-width: 425px) {
+			@content;
+		}
+	} @else if $size == phone {
+		@media (min-width: 426px) and (max-width: 767px) {
+			@content;
+		}
+	} @else if $size == phone-landscape {
+		@media (min-width: 568px) and (max-width: 823px) and (orientation: landscape) {
+			@content;
+		}
+	} @else if $size == tablet {
+		@media (min-width: 768px) and (max-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) and (device-aspect-ratio: 3/4) {
+			@content;
+		}
+	} @else if $size == tablet-landscape {
+		@media (min-width: 768px) and (max-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) and (orientation: landscape) and (device-aspect-ratio: 4/3) {
+			@content;
+		}	
+	} @else if $size == desktop {
+		@media (min-width: 1024px) {
+			@content;
+		}
+	}
+}
