@@ -48,7 +48,7 @@ main {
   @include for-size(desktop) {
     width: 50%;
     box-shadow: 0px 4px 16px rgb(0 0 0 / 25%);
-    padding: 30px;
+    padding: 30px 15px;
   }
 }
 ul {
@@ -88,6 +88,10 @@ ul {
   line-height: 140.62%;
   color: $black;
   margin: 0;
+  @include for-size(desktop) {
+    font-size: 20px;
+    line-height: 140.62%;
+  }
 }
 .text {
   font-weight: normal;
@@ -95,11 +99,20 @@ ul {
   line-height: 140.62%;
   color: $black;
   margin: 0;
+  @include for-size(desktop) {
+    font-size: 20px;
+    line-height: 140.62%;
+  }
 }
 .sub-nav {
   width: 100%;
-  padding: 13.5px 5px;
+  padding: 13px 5px;
   text-align: center;
+  margin: 0;
+  @include for-size(desktop) {
+    padding: 8px 5px;
+    margin: 0 15px;
+  }
 }
 .wrapper {
   position: relative;
@@ -121,6 +134,9 @@ ul {
       color: $secondary-gray;
     }
   }
+  &--dropdown {
+    min-height: 42px;
+  }
 }
 .section {
   height: 100%;
@@ -132,9 +148,11 @@ ul {
     height: auto;
     overflow: hidden;
     margin: 0;
-    @include for-size(desktop) {
-      margin: 0 0 15px;
-    }
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1 1 auto;
   }
 }
 .map-wrapper {
@@ -161,7 +179,9 @@ ul {
     justify-content: space-between;
     .wrapper {
       .dropdown {
+        height: 100%;
         .btn--white {
+          height: 100%;
           .icon--view {
             margin-right: 9.5px;
             color: $black;
@@ -187,6 +207,10 @@ ul {
       border: 2px solid $lite-gray;
       box-shadow: none;
     }
+    @include for-size(desktop) {
+      font-size: 20px;
+      line-height: 140.62%;
+    }
   }
   .form-control {
     border: 1px solid $lite-gray;
@@ -200,6 +224,10 @@ ul {
     &:focus {
       border: 2px solid $lite-gray;
       box-shadow: none;
+    }
+    @include for-size(desktop) {
+      font-size: 20px;
+      line-height: 140.62%;
     }
   }
 }
@@ -220,7 +248,12 @@ ul {
     width: calc(100% - 15px);
     margin: 0 auto 15px;
     .title {
+      font-size: 14px;
       line-height: 125%;
+      @include for-size(desktop) {
+        font-size: 14px;
+        line-height: 140.62%;
+      }
     }
     .eligible-wrapper {
       display: flex;
@@ -231,9 +264,17 @@ ul {
         font-size: 10px;
         line-height: 125%;
         color: $gray;
+        @include for-size(desktop) {
+          font-size: 12px;
+          line-height: 140.62%;
+        }
         &--number {
           font-weight: 900;
           color: $primary-green;
+          @include for-size(desktop) {
+            font-size: 12px;
+            line-height: 140.62%;
+          }
         }
       }
     }
@@ -283,6 +324,12 @@ ul {
       }
       .text {
         color: $gray;
+        font-size: 12px;
+        line-height: 140.62%;
+        @include for-size(desktop) {
+          font-size: 16px;
+          line-height: 140.62%;
+        }
         &--show {
           display: none;
         }
@@ -384,12 +431,20 @@ ul {
           font-size: 10px;
           line-height: 125%;
           z-index: 1;
+          @include for-size(desktop) {
+            font-size: 12px;
+            line-height: 140.62%;
+          }
         }
         .text {
           font-weight: 500;
           font-size: 10px;
           line-height: 125%;
           z-index: 1;
+          @include for-size(desktop) {
+            font-size: 12px;
+            line-height: 140.62%;
+          }
         }
       }
       .progress-bar {
@@ -440,6 +495,44 @@ ul {
         font-weight: bold;
         color: $white;
         display: none;
+      }
+    }
+  }
+}
+.dropdown {
+  .btn--white {
+    display: flex;
+    align-items: center;
+    flex: 0 0 auto;
+    .text {
+      margin-right: 9.5px;
+      font-weight: normal;
+      font-size: 16px;
+      line-height: 140.62%;
+      color: $secondary-black;
+      display: none;
+      @include for-size(desktop) {
+        font-size: 20px;
+        line-height: 140.62%;
+        display: block;
+      }
+    }
+    .icon--view {
+      display: block;
+      @include for-size(desktop) {
+        display: none;
+      }
+    }
+  }
+  .dropdown-menu {
+    .dropdown-item {
+      font-weight: normal;
+      font-size: 16px;
+      line-height: 140.62%;
+      color: $black;
+      @include for-size(desktop) {
+        font-size: 20px;
+        line-height: 140.62%;
       }
     }
   }
