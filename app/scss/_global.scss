@@ -88,9 +88,11 @@ ul {
   line-height: 140.62%;
   color: $black;
   margin: 0;
+  @include for-size(tablet) {
+    font-size: 16px;    
+  }
   @include for-size(desktop) {
-    font-size: 20px;
-    line-height: 140.62%;
+    font-size: 20px;    
   }
 }
 .text {
@@ -99,9 +101,13 @@ ul {
   line-height: 140.62%;
   color: $black;
   margin: 0;
+  @include for-size(tablet) {
+    font-size: 16px;
+    
+  }
   @include for-size(desktop) {
     font-size: 20px;
-    line-height: 140.62%;
+    
   }
 }
 .sub-nav {
@@ -112,6 +118,16 @@ ul {
   @include for-size(desktop) {
     padding: 8px 5px;
     margin: 0 0 15px;
+  }
+  .title {
+    font-size: 12px;
+    line-height: 140.62%;
+    @include for-size(tablet) {
+      font-size: 14px;
+    }
+    @include for-size(desktop) {
+      font-size: 16px;
+    }
   }
 }
 .wrapper {
@@ -250,8 +266,12 @@ ul {
     width: calc(100% - 15px);
     margin: 0 auto 15px;
     .title {
-      font-size: 14px;
+      font-size: 12px;
       line-height: 125%;
+      @include for-size(tablet) {
+        font-size: 14px;
+        line-height: 140.62%;
+      }
       @include for-size(desktop) {
         font-size: 14px;
         line-height: 140.62%;
@@ -306,13 +326,15 @@ ul {
         display: none;
       }
     }
+    .card-body {
+      margin: 12px 0 0;
+    }
   }
   .card-header {
     padding: 0;
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    margin: 0 0 12px;
+    align-items: center;    
     .action--toggle {
       display: flex;
       align-items: center;
