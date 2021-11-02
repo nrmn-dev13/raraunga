@@ -152,6 +152,17 @@ ul {
   }
   &--dropdown {
     min-height: 42px;
+    min-width: none;
+    @include for-size(tablet) {
+      min-width: 182px;
+    }
+    @include for-size(desktop) {
+      min-width: 182px;
+    }
+    .btn {
+      width: 100%;
+      justify-content: space-between;
+    }
   }
 }
 .section {
@@ -200,8 +211,7 @@ ul {
         height: 100%;
         .btn--white {
           height: 100%;
-          .icon--view {
-            margin-right: 9.5px;
+          .icon--view {            
             color: $black;
           }
           .fa-chevron-down {
@@ -528,13 +538,15 @@ ul {
     display: flex;
     align-items: center;
     flex: 0 0 auto;
-    .text {
-      margin-right: 9.5px;
+    .text {      
       font-weight: normal;
       font-size: 16px;
       line-height: 140.62%;
       color: $secondary-black;
       display: none;
+      @include for-size(tablet) {        
+        display: block;
+      }
       @include for-size(desktop) {
         font-size: 20px;
         line-height: 140.62%;
@@ -543,9 +555,26 @@ ul {
     }
     .icon--view {
       display: block;
+      @include for-size(tablet) {
+        display: none;
+      }
       @include for-size(desktop) {
         display: none;
       }
+    }
+    .icon--sort {
+      display: block;
+      color: $black;
+      @include for-size(tablet) {
+        display: none;
+      }
+      @include for-size(desktop) {
+        display: none;
+      }
+    }
+    i.fa-chevron-down {
+      color: $black;
+      margin-left: 9.5px;            
     }
   }
   .dropdown-menu {
