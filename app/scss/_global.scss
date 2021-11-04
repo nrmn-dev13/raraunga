@@ -425,6 +425,9 @@ ul {
   &--primary {
     background-color: $primary-yellow;
   }
+  &--vaccination {
+    background-color: $emerald-green;
+  }
 }
 .list {
   &__item {
