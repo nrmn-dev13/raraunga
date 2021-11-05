@@ -19,26 +19,36 @@ function initMap() {
   });
 
   const contentString =
-    '<div id="content">' +
-    '<div id="siteNotice">' +
-    "</div>" +
-    '<h1 id="firstHeading" class="firstHeading">Uluru</h1>' +
-    '<div id="bodyContent">' +
-    "<p><b>Uluru</b>, also referred to as <b>Ayers Rock</b>, is a large " +
-    "sandstone rock formation in the southern part of the " +
-    "Northern Territory, central Australia. It lies 335&#160;km (208&#160;mi) " +
-    "south west of the nearest large town, Alice Springs; 450&#160;km " +
-    "(280&#160;mi) by road. Kata Tjuta and Uluru are the two major " +
-    "features of the Uluru - Kata Tjuta National Park. Uluru is " +
-    "sacred to the Pitjantjatjara and Yankunytjatjara, the " +
-    "Aboriginal people of the area. It has many springs, waterholes, " +
-    "rock caves and ancient paintings. Uluru is listed as a World " +
-    "Heritage Site.</p>" +
-    '<p>Attribution: Uluru, <a href="https://en.wikipedia.org/w/index.php?title=Uluru&oldid=297882194">' +
-    "https://en.wikipedia.org/w/index.php?title=Uluru</a> " +
-    "(last visited June 22, 2009).</p>" +
-    "</div>" +
-    "</div>";
+    '<div class="card card--list">' +
+    '<h4 class="title"> Eden Terrace</h4>' +
+    '<div class="eligible-wrapper">' +
+    '<div class="text">Eligible Population </div>' +
+    '<div class="text text--number">254</div>' +
+    '</div>' +
+    '<ul class="list">' +
+    '<li class="list__item list__item--progress unvaccinated">' +
+    '<div class="progress-wrapper">' +
+    '<h6 class="title">Unvaccinated</h6>' +
+    '<p class="text">48</p>' +
+    '<progress class="progress-bar" id="file" value="32" max="100"> 32% </progress>' +
+    '<div>' +
+    '<li>' +
+    '<li class="list__item list__item--progress first-dose">' +
+    '<div class="progress-wrapper">' +
+    '<h6 class="title">First Dose</h6>' +
+    '<p class="text">48</p>' +
+    '<progress class="progress-bar" id="file" value="32" max="100"> 32% </progress>' +
+    '<div>' +
+    '<li>' +
+    '<li class="list__item list__item--progress second-dose">' +
+    '<div class="progress-wrapper">' +
+    '<h6 class="title">Second Dose</h6>' +
+    '<p class="text">48</p>' +
+    '<progress class="progress-bar" id="file" value="32" max="100"> 32% </progress>' +
+    '<div>' +
+    '<li>' +
+    '<ul>' +
+    '</div>';
   const infowindow = new google.maps.InfoWindow({
     content: contentString,
   });
@@ -48,12 +58,15 @@ function initMap() {
     map,
     title: "Hello World!",
   });
-  
+
   marker.addListener("click", () => {
     infowindow.open({
       anchor: marker,
       map,
       shouldFocus: false,
     });
+  });
+  map.addListener("click", () => {
+    infowindow.close();
   });
 }
