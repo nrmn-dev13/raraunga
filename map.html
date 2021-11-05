@@ -55,7 +55,7 @@
           <a class="navbar-brand" href="./index.html">
             <img class="img-fluid" src="./dist/img/logo.png" alt="" />
           </a>
-        </div>        
+        </div>
       </nav>
     </header>
     <main>
@@ -87,22 +87,19 @@
                   <i class="fas fa-chevron-down"></i>
                 </button>
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                  <li><a class="dropdown-item" href="./map.html">View by map</a></li>
-                  <li><a class="dropdown-item" href="./list.html">View by list</a></li>                  
+                  <li>
+                    <a class="dropdown-item" href="./map.html">View by map</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="./list.html">View by list</a>
+                  </li>
                 </ul>
               </div>
             </div>
           </div>
         </form>
         <div class="map-wrapper">
-          <iframe
-            id="map"
-            class="map"
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d408613.0919297591!2d174.42593449906903!3d-36.85948204413638!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6d0d47fb5a9ce6fb%3A0x500ef6143a29917!2sAuckland%2C%20Selandia%20Baru!5e0!3m2!1sid!2sid!4v1635514050224!5m2!1sid!2sid"
-            style="border: 0"
-            allowfullscreen=""
-            loading="lazy"
-          ></iframe>
+          <div id="map" class="map"></div>          
         </div>
         <div class="card card--bottom">
           <div class="card-header border-bottom-0">
@@ -124,7 +121,11 @@
                 </div>
                 <div class="checkbox-wrapper">
                   <label for="marker-one" class="label-checkbox">
-                    <input type="checkbox" class="form-checkbox" id="marker-one" />
+                    <input
+                      type="checkbox"
+                      class="form-checkbox"
+                      id="marker-one"
+                    />
                     <div class="custom-checkbox">
                       <i class="icon icon--check fas fa-check"></i>
                     </div>
@@ -138,7 +139,11 @@
                 </div>
                 <div class="checkbox-wrapper">
                   <label for="marker-two" class="label-checkbox">
-                    <input type="checkbox" class="form-checkbox" id="marker-two" />
+                    <input
+                      type="checkbox"
+                      class="form-checkbox"
+                      id="marker-two"
+                    />
                     <div class="custom-checkbox">
                       <i class="icon icon--check fas fa-check"></i>
                     </div>
@@ -152,7 +157,11 @@
                 </div>
                 <div class="checkbox-wrapper">
                   <label for="marker-three" class="label-checkbox">
-                    <input type="checkbox" class="form-checkbox" id="marker-three" />
+                    <input
+                      type="checkbox"
+                      class="form-checkbox"
+                      id="marker-three"
+                    />
                     <div class="custom-checkbox">
                       <i class="icon icon--check fas fa-check"></i>
                     </div>
@@ -166,7 +175,11 @@
                 </div>
                 <div class="checkbox-wrapper">
                   <label for="marker-four" class="label-checkbox">
-                    <input type="checkbox" class="form-checkbox" id="marker-four" />
+                    <input
+                      type="checkbox"
+                      class="form-checkbox"
+                      id="marker-four"
+                    />
                     <div class="custom-checkbox">
                       <i class="icon icon--check fas fa-check"></i>
                     </div>
@@ -178,5 +191,9 @@
         </div>
       </section>
     </main>
+    <script
+      async
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBGrG1EH4KPWG3Xi-fuGTZ15RUM70-CIog&callback=initMap"
+    ></script>
   </body>
 </html>
