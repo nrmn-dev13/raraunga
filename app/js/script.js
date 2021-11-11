@@ -20,7 +20,10 @@ function initMap() {
 
   const contentString =
     '<div class="card card--list">' +
+    '<div class="title-wrapper">' +
     '<h4 class="title"> Eden Terrace</h4>' +
+    '<i class="fas fa-times-circle"></i>' +
+    '</div>' +
     '<div class="eligible-wrapper">' +
     '<div class="text">Eligible Population </div>' +
     '<div class="text text--number">254</div>' +

@@ -73,7 +73,7 @@ ul {
   @include for-size(desktop) {
     height: 54px;
     margin: 24px 0;
-    width: 245px;    
+    width: 245px;
   }
   .img-fluid {
     height: 100%;
@@ -203,6 +203,43 @@ ul {
     display: flex;
     flex-direction: column;
   }
+  &--footer {
+    height: 27px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    flex: 0 0 auto;
+    height: max-content;
+    .bottom-bar {
+      height: auto;
+      margin-top: 0;
+      background-color: $tertiary-yellow;
+      align-items: center;
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      padding: 5px;
+      @include for-size(desktop) {
+        margin-top: 15px;
+      }
+      .text {
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 8px;
+        line-height: 140.62%;
+        color: $gray;
+        @include for-size(desktop) {
+          font-size: 12px;
+          line-height: 140.62%;
+        }
+        strong {
+          color: $black;
+        }
+      }
+    }
+  }
 }
 .map-wrapper {
   height: 100%;
@@ -220,6 +257,16 @@ ul {
     padding: 0;
     margin: 0;
     border: none;
+    .title-wrapper {
+      display: flex;
+      justify-content: space-between;
+      border-bottom: 1px solid $lite-gray;
+      padding-bottom: 6px;
+      margin-bottom: 6px;
+      i {
+        cursor: pointer;
+      }
+    }
     .title {
       font-size: 12px;
       line-height: 140.62%;
@@ -233,14 +280,14 @@ ul {
   }
 }
 .container-list {
-  background-color:#F9F9F9;
+  background-color: #f9f9f9;
   overflow: auto;
 }
 .form {
-  padding: 15px;  
+  padding: 15px;
   &:last-child {
     padding-top: 10px;
-  }  
+  }
   &--float {
     position: absolute;
     top: 0;
@@ -249,7 +296,7 @@ ul {
     z-index: 1;
   }
   &--list {
-    background-color: #F9F9F9;
+    background-color: #f9f9f9;
     display: flex;
     flex-direction: column;
   }
@@ -311,7 +358,7 @@ ul {
 }
 .row {
   &--list {
-    margin: 0 -5px;    
+    margin: 0 -5px;
   }
 }
 .card {
