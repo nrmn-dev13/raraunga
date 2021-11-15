@@ -3,6 +3,12 @@ console.log("Load script.js");
 // Instantiating the global app object
 var app = {};
 
+var locInterestModal = new bootstrap.Modal(document.getElementById("vaccinationModal"), {});
+document.onreadystatechange = function () {  
+  locInterestModal.show();  
+};
+// C
+
 const toggleIcon = document.querySelector(".action--toggle");
 const markerInfoCard = document.querySelector(".card--bottom");
 toggleIcon.addEventListener("click", ()=>{

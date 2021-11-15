@@ -209,4 +209,53 @@
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBGrG1EH4KPWG3Xi-fuGTZ15RUM70-CIog&callback=initMap"
     ></script>
   </body>
+  <div
+    class="modal modal-vaccination fade"
+    id="vaccinationModal"
+    tabindex="-1"
+    aria-labelledby="vaccinationLabelModal"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="vaccinationLabel">Vaccination Buses</h5>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"            
+          ><i class="fas fa-times"></i></button>
+        </div>
+        <div class="modal-body">
+          <div class="content">
+            <div class="modal-field main-title">
+              <h6 class="title">Auckland War Memorial Museum</h6>
+              <p class="text">Auckland War Memorial Museum</p>
+            </div>
+            <div class="modal-field">
+              <h6 class="title">Open and Close Date</h6>
+              <ul class="list">
+                <li class="list__item">
+                  <i class="icon icon--circle-green"></i>
+                  <p class="text">06 Nov 2021, 12:00 PM - 8:00 PM</p>
+                </li>
+                <li class="list__item">
+                  <i class="icon icon--circle-red"></i>
+                  <p class="text">07 Nov 2021, 12:00 PM - 8:00 PM</p>
+                </li>
+              </ul>
+            </div>
+            <div class="modal-field">
+              <h6 class="title">Provider Name</h6>
+              <p class="text">Ira Dot</p>
+            </div>
+            <div class="modal-field">
+              <h6 class="title">Team Name</h6>
+              <p class="text">Ira Dot</p>
+            </div>
+          </div>
+        </div>        
+      </div>
+    </div>
+  </div>
 </html>
