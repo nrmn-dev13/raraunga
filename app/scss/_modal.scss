@@ -1,6 +1,11 @@
 .modal {
   &.modal-vaccination {
     .modal-dialog {
+      max-width: 287px;
+      margin: 0 auto;
+      @include for-size(desktop) {
+        max-width: 500px;
+      }
       .modal-content {
         padding: 15px;
         .modal-header {
